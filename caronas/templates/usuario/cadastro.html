@@ -1,0 +1,37 @@
+{% extends '../base.html' %}
+{% block pagetitle %}Cadastro de Usuário{% endblock %}
+{% block metatitle %}Cadastro de Usuário{% endblock %}
+
+{% block conteudo %}
+
+<div class="col">
+	<div class="card">
+        <h2 class="card-header text-center">Cadastro de Usuário</h2>
+
+		<div class="card-body">
+			<div class="row">
+				<div class="col-md-12">
+                    <span class="help-block">Todos os campos com '<span class='red'>*</span>' devem ser preenchidos.</span>
+                    <span class="help-block">A senha precisa ter no mínimo 6 caracteres.</span>
+                    <span class="help-block">Não há diferença de letras maiúsculas ou minúsculas no login e senha</span>
+                    <span class="help-block">Outros campos precisam ter no mínimo 2 caracteres.</span>
+                    <form action="/novaConta" method="post">
+                        {% csrf_token %}
+                        <div class="row">
+
+                            {% for field in form %}
+                            <div class="col-md-4">
+        						<div class="form-group">
+        							<label class="control-label" id="{{ field.id_for_label }}" for="{{ field.id_for_label }}">{{ field.label }}</label>
+        							{{ field }}
+        						</div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </form>
+                </div>
+			</div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends './base.html' %}
+{% block pagetitle %}Login{% endblock %}
+{% block metatitle %}Login{% endblock %}
+
+{% block primary %}
+
+        <div class="row">
+            {% for problema in problemas %}
+
+            <div class="col-4">
+
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">{{ problema.apelido }}</h4>
+                        <h6 class="card-subtitle mb-2 text-muted">{{ problema.autor }}</h6>
+                        <p class="card-text">{{ problema.descricao }}</p>
+                        <a href="p/{{ problema.apelido }}" class="card-link">Link pelo apelido</a>
+                        <a href="p/{{ problema.id }}" class="card-link">Link pelo ID</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+{% endblock %}

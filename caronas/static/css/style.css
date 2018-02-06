@@ -1,0 +1,55 @@
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    background-image: linear-gradient(to bottom, #f4fff6, #7ff192);
+    margin-bottom: 80px; /* Margin bottom by footer height */
+}
+
+body, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4 {
+    font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+    font-weight: 300;
+}
+
+.logo{
+    display: inline-block;
+    height: 3em;
+}
+
+.nav-login-titulo {
+    display: inline-block;
+    vertical-align:middle;
+    margin:0;
+    color: white;
+}
+
+.nav-cabecalho {
+    background-color:#009688;
+    border-radius: 0;
+    margin-bottom: 2em;
+}
+
+.btn-primary{
+    background-color: #009688;
+    border-color: #009688;
+}
+
+.btn-primary:hover{
+    background-color: #03675e;
+    border-color: #03675e;
+}
+
+.footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60px; /* Set the fixed height of the footer here */
+    background-color:#009688;
+
+}
+
+.footer a{
+    color: #212529;
+}

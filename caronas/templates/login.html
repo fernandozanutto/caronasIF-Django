@@ -1,0 +1,44 @@
+{% extends './base.html' %}
+{% block metatitle %}{% block pagetitle %}Login{% endblock %}{% endblock %}
+
+
+{% block conteudo %}
+<div class="col-lg-10 col-md-10 offset-md-1">
+	<div class="card">
+        <h2 class="card-header text-center">Bem Vindo ao Caronas IF!</h2>
+		<div class="card-body">
+			<div class="row">
+				<div class="col-lg-6 col-md-12">
+					<h4 class="card-title">Agora ficou muito mais fácil conseguir uma carona!</h4>
+					<p class="card-text">Você poderá oferecer e pegar caronas!</p>
+					<p class="card-text">Nosso sistema estará sempre cuidando se as caronas estão acontecendo da maneira correta, disponibilizando ao usuário maior confiança!</p>
+					</h4>
+				</div>
+
+				<div class="col-lg-6 col-md-12">
+					<form action="/login" method="post">
+                        {% csrf_token %}
+						<div class="form-group">
+							<label class="control-label" id="{{ form.login.id_for_label }}" for="{{ form.login.id_for_label }}">{{ form.login.label }}</label>
+							{{ form.login }}
+						</div>
+						<div class="form-group">
+							<label class="control-label" id="{{ form.senha.id_for_label }}" for="{{ form.senha.id_for_label }}">{{ form.senha.label }}</label>
+							{{ form.senha }}
+						</div>
+						<div class="row">
+							<div class="col">
+								<a href="/novaConta" class="btn btn-primary btn-block">Nova conta</a>
+								<a href="/recuperarSenha">Esqueceu sua senha?</a>
+							</div>
+							<div class="col">
+								<button type="submit" class="btn btn-primary btn-block">Entrar</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+        </div>
+    </div>
+</div>
+{% endblock %}

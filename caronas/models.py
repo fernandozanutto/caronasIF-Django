@@ -13,13 +13,13 @@ class Usuario(Model):
     sobrenome       = CharField(max_length=150)
     login           = CharField(max_length=20)
     senha           = CharField(max_length=20)
-    vinculo         = CharField(max_length=1 ,choices=choices)
+    vinculo         = CharField(max_length=1 ,choices=choices, verbose_name="Vínculo")
     email           = EmailField()
     cidade          = CharField(max_length=250)
     logradouro      = CharField(max_length=250)
-    numEndereco     = PositiveIntegerField()
+    numEndereco     = PositiveIntegerField(verbose_name="Número de Endereço")
     telefone        = CharField(max_length=14)
-    dataCadastro    = DateField(auto_now_add=True)
+    dataCadastro    = DateField(auto_now_add=True, verbose_name="Data de Cadastro")
     ativo           = BooleanField(default=True)
 
     class Meta:
